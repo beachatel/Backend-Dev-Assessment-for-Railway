@@ -15,7 +15,7 @@ const port = process.env.PORT || 3000;
 
 app.use(cors());
 
-// ✅ Serve static files from 'public' folder
+
 app.use(express.static(path.join(__dirname, "public")));
 
 const baseApiUrl = "https://data.bus-data.dft.gov.uk/api/v1/datafeed/";
@@ -42,7 +42,7 @@ app.get("/busdata", async (req, res) => {
   }
 });
 
-// ✅ Fallback to index.html (optional for SPA routing)
+
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
